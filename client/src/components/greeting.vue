@@ -1,0 +1,19 @@
+<template>
+<p>
+  Hello, {{ this.greetingName }}
+  </p>
+</template>
+
+<script>
+
+export default {
+    props: {
+        greetingName: String
+    }
+
+}
+</script>
+
+<style>
+
+</style>
