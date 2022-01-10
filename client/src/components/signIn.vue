@@ -1,19 +1,10 @@
 <template>
     <div class="bg">   
         <v-row class="d-flex justify-center mt-6 mb-6">
-            <p class="signin">Sign Up</p>
+            <p class="signin">Sign In</p>
         </v-row>
         <form ref="form" class="d-flex justify-center">
             <v-col cols="3">
-                <v-text-field
-                    filled
-                    width="10%"
-                    solo
-                    label="Name"
-                    type="name"
-                    v-model="name"
-                    required
-                ></v-text-field>
                 <v-text-field
                     filled
                     solo
@@ -40,34 +31,12 @@
             class="mt-5 mb-3"
             @click="handleLogin"
             >
-            Submit
+            Sign In
             </v-btn>
             
         </v-row>
         <div class="pt-3" v-if="this.err">{{ this.error }}</div>
         
-            <v-row class="ctn pt-4" >
-                <v-divider inset class="left"></v-divider>&nbsp;Or&nbsp;<v-divider class="right"></v-divider>
-            </v-row>
-        <v-row class="d-flex justify-center">
-            <v-btn
-            depressed
-            class="mt-7"
-            color="primary"
-            href="http://localhost:3000/auth/google"
-            >
-                Sign In with Google
-            </v-btn>
-           &nbsp;
-            <v-btn
-            depressed
-            class="mt-7"
-            color="success"
-            @click="$router.push('signin')"
-            >
-                Sign In with Username
-            </v-btn>
-        </v-row>
     </div>
 </template>
 

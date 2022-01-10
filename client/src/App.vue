@@ -57,7 +57,7 @@
               </v-list-item>
 
               <v-list-item>
-                <v-list-item-title>Buzz</v-list-item-title>
+                <v-list-item-title>Profile</v-list-item-title>
               </v-list-item>
             </v-list-item-group>
           </v-list>
