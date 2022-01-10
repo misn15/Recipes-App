@@ -1,13 +1,10 @@
 <template>
     <div class="bg">   
-        <!-- <v-container class="ctn"> -->
         <v-row class="d-flex justify-center mt-6 mb-6">
             <p class="signin">Sign Up</p>
         </v-row>
-        
         <form ref="form" class="d-flex justify-center">
-           
-               <v-col cols="4">
+            <v-col cols="3">
                 <v-text-field
                     filled
                     width="10%"
@@ -25,7 +22,6 @@
                     v-model="username"
                     required
                 ></v-text-field>
-            
                 <v-text-field
                     filled
                     solo
@@ -36,45 +32,31 @@
                     hide-details
                 ></v-text-field>
                 </v-col>
-           
         </form>
-        
-    
-    <!-- <v-card-actions class="mx-0"> -->
-        <!-- v-model="submitName"  -->
+
         <v-row class="d-flex justify-center">
-        <v-btn
-        color="error"
-        width="10%"
-        class="mt-3"
-        @click="handleLogin"
-        >
-        Submit
-        </v-btn>
+            <v-btn
+            color="error"
+            class="mt-5 mb-5"
+            @click="handleLogin"
+            >
+            Submit
+            </v-btn>
         </v-row>
 
         <div v-if="this.err">{{ this.error }}</div>
-
-        <!-- </v-card-actions> -->
-        <!-- <v-spacer class="space"></v-spacer> -->
-        <!-- <v-container> -->
-            <v-row class="d-flex justify-center">
-                <v-divider></v-divider>&nbsp; Or &nbsp;<v-divider></v-divider>
+            <v-row class="ctn">
+                <v-divider inset class="left"></v-divider>&nbsp;Or&nbsp;<v-divider class="right"></v-divider>
             </v-row>
-        <!-- </v-container> -->
-        <!-- <v-spacer class="space"></v-spacer> -->
-        <v-row class="d-flex justify-center">
-        <v-btn
-        depressed
-        width="10%"
-        color="primary"
-        href="http://localhost:3000/auth/google"
-        >
-        Sign In with Google
-        </v-btn>
+        <v-row class="d-flex justify-center mt-7">
+            <v-btn
+            depressed
+            color="primary"
+            href="http://localhost:3000/auth/google"
+            >
+                Sign In with Google
+            </v-btn>
         </v-row>
-    
-        <!-- </v-container> -->
     </div>
 </template>
 
@@ -151,16 +133,19 @@ export default {
 }
 
 .ctn {
-    max-width: 25%;
-
-    /* max-width: 100px !important; */
+    line-height: 0.35;
 }
 
 .signin {
     font-size: 25px;
 }
 
-.space {
-    height: 20px;
+.left {
+    margin-left: 37% !important;
 }
+
+.right {
+    margin-right: 37% !important;
+}
+
 </style>
