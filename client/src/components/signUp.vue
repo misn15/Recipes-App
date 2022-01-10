@@ -37,24 +37,35 @@
         <v-row class="d-flex justify-center">
             <v-btn
             color="error"
-            class="mt-5 mb-5"
+            class="mt-5 mb-3"
             @click="handleLogin"
             >
             Submit
             </v-btn>
+            
         </v-row>
-
-        <div v-if="this.err">{{ this.error }}</div>
-            <v-row class="ctn">
+        <div class="pt-3" v-if="this.err">{{ this.error }}</div>
+        
+            <v-row class="ctn pt-4" >
                 <v-divider inset class="left"></v-divider>&nbsp;Or&nbsp;<v-divider class="right"></v-divider>
             </v-row>
-        <v-row class="d-flex justify-center mt-7">
+        <v-row class="d-flex justify-center">
             <v-btn
             depressed
+            class="mt-7"
             color="primary"
             href="http://localhost:3000/auth/google"
             >
                 Sign In with Google
+            </v-btn>
+           &nbsp;
+            <v-btn
+            depressed
+            class="mt-7"
+            color="success"
+            href="http://localhost:3000/auth/google"
+            >
+                Sign In with Username
             </v-btn>
         </v-row>
     </div>
@@ -134,6 +145,7 @@ export default {
 
 .ctn {
     line-height: 0.35;
+    margin-top: 12px !important;
 }
 
 .signin {
