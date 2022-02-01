@@ -36,7 +36,7 @@
             
         </v-row>
         <div class="pt-3" v-if="this.err">{{ this.error }}</div>
-        
+
     </div>
 </template>
 
@@ -67,34 +67,38 @@ export default {
     methods: {
 
         handleLogin(){
+            //const params = new URLSearchParams();
             const params = new URLSearchParams();
             params.append('username', this.username);
             params.append('password', this.password );
-            params.append('name', this.name);
-            console.log(this.username);
-            console.log(this.name);    
-            this.$store.commit('setName', {
-            name: this.name
-            });  
+
+            console.log(params);
+            // this.$store.commit('setName', {
+            // name: this.name
+            // });  
             // console.log(this.state.name);               
-            this.$emit('childToParent', this.name);
+            // this.$emit('childToParent', this.name);
     
             // let data = { username: this.username, password: this.password };
-            axios
-            .post('http://localhost:3000/register', params,
-            {
+
+    
+            axios.post('http://localhost:3000/findUser',  params,
+                        {
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded', 
+                'Content-Type': 'application/x-www-form-urlencoded'
                 }
             })
             .then(response => {
-            if (response.data['name']){
-                this.err = true;
-                this.error = response.data['message'];
-            } else if(response.data === 'Success') {
-                this.$router.push('search'); 
-                this.$emit('childToParent', this.name); 
-            }    
+                console.log(response.data);
+                console.log(response.data['name']);
+
+                this.$store.commit('setName', {
+                name: response.data['name']
+
+                });  
+                this.$emit('childToParent', response.data['name']);            
+                
+                this.$router.push('search');
             }); 
         }
 

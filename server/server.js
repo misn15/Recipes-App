@@ -90,6 +90,22 @@ app.get("/auth/check", (req, res) => {
   }
 });
 
+app.post("/findUser", (req, res) => {
+  console.log("user - " + req.body.username);
+  RecipeUser.findOne({username: new RegExp('^'+req.body.username+'$', "i")}, function(err, doc) {
+    console.log(doc.username);
+    if (err) {
+      res.send(err);
+    } else {
+      res.send({'username': doc.username, 'name': doc.name});
+    }
+  });
+  //res.json({});
+  
+   //console.log(res.json({}));
+});
+
+
 app.get('/auth/google',
   passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login'] })
 );
@@ -110,7 +126,7 @@ app.post('/register', function(req, res){
   
   console.log(req.body);
   console.log("username ", req.body.username);
-  RecipeUser.register({username:req.body.username}, req.body.password, function(err, user){
+  RecipeUser.register({username:req.body.username, name:req.body.name}, req.body.password, function(err, user){
     if (err) {
        res.send(err);
     } else {

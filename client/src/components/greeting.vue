@@ -1,6 +1,6 @@
 <template>
 <p>
-  Hello, {{ this.greetingName }}
+  {{ this.greetingName }}
   </p>
 </template>
 
