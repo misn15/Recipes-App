@@ -15,7 +15,8 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
   state: {
     count: 0,
-    greetingName:''
+    greetingName:'',
+    signedIn: false
   },
   mutations: {
     increment (state) {
@@ -24,6 +25,10 @@ const store = new Vuex.Store({
     setName(state, payload) {
       state.greetingName = payload.name;
       console.log(state.greetingName);
+    },
+    isSignedIn(state, payload) {
+      state.signedIn = payload.name;
+      console.log(state.signedIn);
     }
   }
 })

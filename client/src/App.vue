@@ -103,6 +103,7 @@ export default {
   },
   computed: {
         getName () {
+          
           return this.$store.state.greetingName;
         }
   },

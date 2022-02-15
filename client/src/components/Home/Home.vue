@@ -18,7 +18,7 @@
                      Sign Up
                 </v-btn>
                 <!-- <v-spacer width="1%"></v-spacer> -->
-                <v-btn elevation="2" outlined width="11%" color="black">
+                <v-btn elevation="2" outlined width="11%" color="black" @click="$router.push('signin')">
                     Log In
                 </v-btn>   
                 <!-- <v-spacer width="1%"></v-spacer> -->

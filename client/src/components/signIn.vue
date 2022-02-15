@@ -49,16 +49,11 @@ export default {
     },
     data() {
         return { 
-            isFavorited: false,
-            clientId: '',
-            clientToken: '',
+            err: false,
             username: '',
             password: '',
-            results: {},
-            err: false,
             error: '',
-            greeting: '',
-            name: ''
+            signedIn: false
         }
     },
     components: {
@@ -91,6 +86,10 @@ export default {
             .then(response => {
                 console.log(response.data);
                 console.log(response.data['name']);
+                
+                this.$store.commit('isSignedIn', {
+                    name: true
+                });  
 
                 this.$store.commit('setName', {
                 name: response.data['name']

@@ -1,4 +1,4 @@
-# my-pet-app
+# Recipe App
 
 ## Project setup
 ```
