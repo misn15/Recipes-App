@@ -1,6 +1,6 @@
 <template>
 <p>
-  {{ count ? 'Hello,'&this.greetingName : null}}
+  {{ count ? 'Hello, ' + this.greetingName : null}}
   </p>
 </template>
 
@@ -12,8 +12,8 @@ export default {
     },
     computed: {
     count () {
-        console.log('state: '&this.store.state.signedIn);
-      return this.store.state.signedIn;
+        console.log('state: '+this.$store.state.signedIn);
+      return this.$store.state.signedIn;
     }
     }
 

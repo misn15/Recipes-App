@@ -9,7 +9,7 @@
           <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
           <v-toolbar-title>Recipe Finder</v-toolbar-title>
           <v-spacer></v-spacer>
-          <Greeting :greetingName="getName"/>
+          <Greeting :greetingName="this.getName"/>
           <v-btn icon>
             <v-icon>mdi-magnify</v-icon>
           </v-btn>
@@ -103,7 +103,7 @@ export default {
   },
   computed: {
         getName () {
-          
+           console.log('Greeting ' +this.$store.state.greetingName);
           return this.$store.state.greetingName;
         }
   },
