@@ -5,7 +5,6 @@
                 Search by...
             </div>
             <v-container class="d-flex justify-center">
-                <!-- <v-sheet class="d-flex justify-center pt-5"> -->
                 <v-slide-group  >
                     <v-slide-item v-slot="{ active, toggle }">
                     <v-btn class="mx-2" :input-value="active" active-class="purple white--text" depressed rounded @click="toggle" v-on:click="getCriteriaView('recipe')">
@@ -24,9 +23,7 @@
                     </v-slide-item>
                 </v-slide-group>
                 </v-container>
-                <!-- </v-sheet> -->
-            
-                <v-container>
+              <v-container>
             <v-row class="d-flex justify-center" v-if="this.typeOfSearch==='recipe'">
                 <v-card class="pa-4" flat height="10%" >
                 <v-toolbar dense floating style="width: 300px"> 
@@ -139,6 +136,7 @@ methods: {
   },
   getCriteriaView(criteria) {
     this.typeOfSearch = criteria;
+    this.showResults = false;
     console.log(criteria);
     console.log('called');
     return this.typeOfSearch
@@ -146,7 +144,6 @@ methods: {
 },
 };
 
-//API key: 3e20cdd625fd442187cf6461da99414e
 </script>
 
 
